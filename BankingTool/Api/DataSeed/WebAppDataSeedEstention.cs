@@ -104,38 +104,6 @@ namespace Api.DataSeed
 					await userManager.AddToRoleAsync(user, "admin");
 				}
 			}
-			//using var context = scope.ServiceProvider.GetRequiredService<PeopleContext>();
-			//{
-			//	try
-			//	{
-			//		context.Database.EnsureCreated();
-
-			//		context.AddRange(
-			//		[
-			//			new Identity.Role() { Name = "Admin"},
-			//			new Identity.Role() { Name = "User" }
-			//		]);
-
-			//		var admin = new Identity.User()
-			//		{
-			//			UserName = "Admin",
-			//			Email = "admin@app.com",
-			//		};
-			//		var adminPwd = new PasswordHasher<Identity.User>().HashPassword(admin, "Password1!");
-			//		admin.PasswordHash = adminPwd;
-
-			//		context.AddRange(
-			//		[
-			//			admin
-			//		]);
-			//		context.SaveChanges();
-			//	}
-			//	catch (Exception)
-			//	{
-
-			//		throw;
-			//	}
-			//}
 		}
 	}
 }
