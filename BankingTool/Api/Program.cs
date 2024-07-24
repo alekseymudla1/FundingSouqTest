@@ -49,7 +49,7 @@ namespace Api
 
 			builder.Services.AddTransient<IClientRepository, ClientRepository>();
 			builder.Services.AddSingleton<IQueryCache<QueryObject>, QueryCache>();
-			
+
 			var app = builder.Build();
 
 			// Configure the HTTP request pipeline.

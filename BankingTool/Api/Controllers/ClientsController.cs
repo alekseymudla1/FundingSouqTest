@@ -2,10 +2,8 @@
 using Domain.Interfaces;
 using Domain.Interfaces.Repositories;
 using Domain.Models;
-using EF.Context;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using NUlid;
 
 namespace Api.Controllers
@@ -39,7 +37,7 @@ namespace Api.Controllers
 		public async Task<IActionResult> GetClientAsync(string id)
 		{
 			var client = await _repo.GetClientAsync(new Ulid(id));
-			if(client is null)
+			if (client is null)
 			{
 				return NotFound();
 			}
@@ -70,7 +68,7 @@ namespace Api.Controllers
 
 		private Client FillFields(Client client, ClientUpdateDTO clientUpdateDTO)
 		{
-			if(!string.IsNullOrWhiteSpace(clientUpdateDTO.FirstName)) client.FirstName = clientUpdateDTO.FirstName;
+			if (!string.IsNullOrWhiteSpace(clientUpdateDTO.FirstName)) client.FirstName = clientUpdateDTO.FirstName;
 			if (!string.IsNullOrWhiteSpace(clientUpdateDTO.LastName)) client.LastName = clientUpdateDTO.LastName;
 			if (!string.IsNullOrWhiteSpace(clientUpdateDTO.Email)) client.Email = clientUpdateDTO.Email;
 			if (!string.IsNullOrWhiteSpace(clientUpdateDTO.PersonalId)) client.PersonalId = clientUpdateDTO.PersonalId;

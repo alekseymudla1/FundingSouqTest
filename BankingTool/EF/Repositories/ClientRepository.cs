@@ -55,7 +55,7 @@ namespace EF.Repositories
 				.Include(c => c.Accounts)
 				.FirstOrDefaultAsync(c => c.Id.Equals(id));
 		}
-		
+
 		public async Task<Client> CreateClientAsync(Client client, Address address, string[] accountNumbers)
 		{
 			client.Address = address;
